@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+  <style>
+    .navi {
+      background-color: #EEEEEE;
+    }
+
+    .weather-card {
+      background-color: #607D8B;
+    }
+
+    .material-icons {
+      background-color: #29B6F6;
+      padding: 6px;
+      margin-top: 18px;
+    }
+
+    .collection-item {
+      color: #607D8B !important;
+    }
+
+    .card-panel {
+      background-color: #607D8B;
+      padding: 0.5em;
+    }
+
+    .wi {
+      font-size: 4em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col s12 m4 l3 navi">
+      <div class="row">
+        <div class="input-field col s9">
+          <input id="wSearch" type="text" class="validate">
+          <label for="wSearch">City Name</label>
+        </div>
+        <div class="col s3">
+          <i class="material-icons" id="wLookup">search</i>
+        </div>
+      </div>
+      <div class="collection" id="wHistory">
+        <a href="#!" class="collection-item">Alvin</a>
+        <a href="#!" class="collection-item">Alvin</a>
+        <a href="#!" class="collection-item">Alvin</a>
+      </div>
+    </div>
+    <div class="col s12 m8 l9" id="wDetail">
+      <h2 id="wCity">Atlanta</h2>
+      <p>As of <span id="wTime">Jan 31, 2020 3:30pm</span></p>
+      <i class="wi wi-owm-802"></i>
+      <p>Temperature: <span id="wTemp"></span></p>
+      <p>Humidity: <span id="wHumi"></span></p>
+      <p>Wind Speed: <span id="wWind"></span></p>
+      <p>UV Index: <span id="wUV"></span></p>
+      <h4>5-day Forecast:</h4>
+      <div class="row" id="wFore">
+        <div class="col s12 m2">
+          <div class="card-panel">
+            <span class="white-text">
+              <h6>1/31/2020</h6>
+              <i class="wi wi-owm-800"></i>
+              <p>High: 88.8F</p>
+              <p>Humidity: 88%</p>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./sample_today.js"></script>
+  <script src="./sample_forecast.js"></script>
+  <script src="./app.js"></script>
+</body>
+
+</html>
