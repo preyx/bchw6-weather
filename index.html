@@ -18,10 +18,10 @@
       background-color: #607D8B;
     }
 
-    .material-icons {
+    .search-btn {
       background-color: #29B6F6;
-      padding: 6px;
-      margin-top: 18px;
+      /* padding: 6px; */
+      /* margin-top: 18px; */
     }
 
     .collection-item {
@@ -36,55 +36,68 @@
     .wi {
       font-size: 4em;
     }
+
+    .uv-btn {
+      cursor: default;
+    }
+
+    .city-list {
+      cursor: pointer;
+    }
+
+    .no-margin {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
   </style>
 </head>
 
 <body>
+  <div id="errorModal" class="modal">
+    <div class="modal-content">
+      <h4>Error!</h4>
+      <p>City not found!</p>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
   <div class="row">
     <div class="col s12 m4 l3 navi">
-      <div class="row">
-        <div class="input-field col s9">
+      <form class="row">
+        <div class="input-field col s8">
           <input id="wSearch" type="text" class="validate">
           <label for="wSearch">City Name</label>
         </div>
-        <div class="col s3">
-          <i class="material-icons" id="wLookup">search</i>
+        <div class="input-field col s4">
+          <button class="btn search-btn" type="submit" name="action" id='wLookup'><i class="material-icons">search</i></button>
         </div>
+      </form>
+      <div class="col s12">
+        <h4 class="no-margin">History:</h4>
       </div>
-      <div class="collection" id="wHistory">
-        <a href="#!" class="collection-item">Alvin</a>
-        <a href="#!" class="collection-item">Alvin</a>
-        <a href="#!" class="collection-item">Alvin</a>
+      <div class="collection city-list" id="wHistory">
       </div>
     </div>
     <div class="col s12 m8 l9" id="wDetail">
-      <h2 id="wCity">Atlanta</h2>
-      <p>As of <span id="wTime">Jan 31, 2020 3:30pm</span></p>
-      <i class="wi wi-owm-802"></i>
-      <p>Temperature: <span id="wTemp"></span></p>
-      <p>Humidity: <span id="wHumi"></span></p>
-      <p>Wind Speed: <span id="wWind"></span></p>
-      <p>UV Index: <span id="wUV"></span></p>
+      <h2 id="wCity"></h2>
+      <p>As of <span id="wTime"></span></p>
+      <i class="" id="wIcon"></i>
+      <p><span id="wCond"></span></p>
+      <p>Temperature: <span id="wTemp"></span>℉</p>
+      <p>Humidity: <span id="wHumi"></span>%</p>
+      <p>Wind Speed: <span id="wWind"></span>mph</p>
+      <p>UV Index: <a class="btn-small uv-btn" id="wUV"></a></p>
       <h4>5-day Forecast:</h4>
       <div class="row" id="wFore">
-        <div class="col s12 m2">
-          <div class="card-panel">
-            <span class="white-text">
-              <h6>1/31/2020</h6>
-              <i class="wi wi-owm-800"></i>
-              <p>High: 88.8F</p>
-              <p>Humidity: 88%</p>
-            </span>
-          </div>
-        </div>
       </div>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="./sample_today.js"></script>
-  <script src="./sample_forecast.js"></script>
+  <!-- <script src="./sample_today.js"></script> -->
+  <!-- <script src="./sample_forecast.js"></script> -->
   <script src="./app.js"></script>
 </body>
 
