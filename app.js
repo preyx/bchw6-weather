@@ -38,7 +38,7 @@ const fetchData = x => {
     M.Modal.init(document.getElementById('errorModal')).open()
     return
   }
-  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${x}&appid=${appid}`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${x}&appid=${appid}`)
     .then(r => r.json())
     .then(data => {
       // console.log(data)
@@ -53,7 +53,7 @@ const fetchData = x => {
       document.getElementById('wHumi').textContent = data.main.humidity
       document.getElementById('wWind').textContent = speedConv(data.wind.speed)
       document.getElementById('wIcon').className = 'wi wi-owm-' + data.weather[0].id
-      fetch(`http://api.openweathermap.org/data/2.5/uvi?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=${appid}`)
+      fetch(`https://api.openweathermap.org/data/2.5/uvi?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=${appid}`)
         .then(r => r.json())
         .then(uvData => {
           // console.log(uvData)
@@ -80,7 +80,7 @@ const fetchData = x => {
       console.error(e)
     })
 
-  fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${x}&APPID=${appid}`)
+  fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${x}&APPID=${appid}`)
     .then(r => r.json())
     .then(data => {
       // console.log(data)
