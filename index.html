@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+  <style>
+    .navi {
+      background-color: #EEEEEE;
+    }
+
+    .weather-card {
+      background-color: #607D8B;
+    }
+
+    .search-btn {
+      background-color: #29B6F6;
+      /* padding: 6px; */
+      /* margin-top: 18px; */
+    }
+
+    .collection-item {
+      color: #607D8B !important;
+    }
+
+    .card-panel {
+      background-color: #607D8B;
+      padding: 0.5em;
+    }
+
+    .wi {
+      font-size: 4em;
+    }
+
+    .uv-btn {
+      cursor: default;
+    }
+
+    .city-list {
+      cursor: pointer;
+    }
+
+    .no-margin {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="errorModal" class="modal">
+    <div class="modal-content">
+      <h4>Error!</h4>
+      <p>City not found!</p>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12 m4 l3 navi">
+      <form class="row">
+        <div class="input-field col s8">
+          <input id="wSearch" type="text" class="validate">
+          <label for="wSearch">City Name</label>
+        </div>
+        <div class="input-field col s4">
+          <button class="btn search-btn" type="submit" name="action" id='wLookup'><i class="material-icons">search</i></button>
+        </div>
+      </form>
+      <div class="col s12">
+        <h4 class="no-margin">History:</h4>
+      </div>
+      <div class="collection city-list" id="wHistory">
+      </div>
+    </div>
+    <div class="col s12 m8 l9" id="wDetail">
+      <h2 id="wCity"></h2>
+      <p>As of <span id="wTime"></span></p>
+      <i class="" id="wIcon"></i>
+      <p><span id="wCond"></span></p>
+      <p>Temperature: <span id="wTemp"></span>℉</p>
+      <p>Humidity: <span id="wHumi"></span>%</p>
+      <p>Wind Speed: <span id="wWind"></span>mph</p>
+      <p>UV Index: <a class="btn-small uv-btn" id="wUV"></a></p>
+      <h4>5-day Forecast:</h4>
+      <div class="row" id="wFore">
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <!-- <script src="./sample_today.js"></script> -->
+  <!-- <script src="./sample_forecast.js"></script> -->
+  <script src="./app.js"></script>
+</body>
+
+</html>
